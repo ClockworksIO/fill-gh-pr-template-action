@@ -6,4 +6,5 @@
          action.impl/action                     {:local/root "./action"}
          }
  
- :aliases         {:format      {:deps          {mvxcvi/cljstyle                       {:mvn/version "0.15.0"}}}}}
+ :aliases         {:format      {:deps          {mvxcvi/cljstyle                       {:mvn/version "0.15.0"}}}
+                   :nREPL       {:extra-deps    {nrepl/nrepl                           {:mvn/version "1.3.0"}}}}}

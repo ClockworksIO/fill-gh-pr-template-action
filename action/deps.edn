@@ -1,6 +1,6 @@
 {:paths ["src"]
  :deps  {org.clojure/clojure                    {:mvn/version "1.11.3"}
-         com.github.clj-easy/graal-build-time   {:mvn/version "1.0.5 "}
+         com.github.clj-easy/graal-build-time   {:mvn/version "1.0.5"}
          clockworksio/clci                      {:git/url "https://github.com/clockworksio/clci"
                                                  :git/tag "clci-0.25.2" 
                                                  :git/sha "9bfa874cf07ab7ecaa5d642e53794819721f71eb"}

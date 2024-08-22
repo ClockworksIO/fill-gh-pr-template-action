@@ -2,9 +2,8 @@
  :deps  {org.clojure/clojure                    {:mvn/version "1.11.3"}
          clockworksio/clci                      {:git/url "https://github.com/clockworksio/clci"
                                                  :git/tag "clci-0.25.2" 
-                                                 :git/sha "9bfa874cf07ab7ecaa5d642e53794819721f71eb"}
-         io.clockworks/action                   {:local/root "action/"}}
+                                                 :git/sha "9bfa874cf07ab7ecaa5d642e53794819721f71eb"}}
 
  
  :tasks           {clci         {:doc "Run clci.",
-                                 :task (exec 'clci.core/-main)}}
+                                 :task (exec 'clci.core/-main)}}}
