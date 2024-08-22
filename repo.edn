@@ -1,0 +1,8 @@
+{:scm
+ {:type :git,
+  :url "git@github.com:ClockworksIO/fill-gh-pr-template-action.git",
+  :provider {:name :github, :repo "fill-gh-pr-template-action", :owner "ClockworksIO"}},
+ :products
+ [{:root "action/", :version "0.0.0", :key :action}]
+ :bricks
+ []}

@@ -1,0 +1,21 @@
+# action.yml
+name: 'Fill PR Template'
+description: 'Fill a PR template using the given values.'
+inputs:
+  draft:  # set if a PR is set as a draft as default
+    description: 'PR is marked as a draft'
+    required: false
+    default: true
+  draft-label:  # set which label to use to mark a draft
+    description: 'Label to mark as draft'
+    required: false
+    default: 'draft'
+#outputs:
+  # time: # id of output
+  #   description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+     - ${{ inputs.draft }}
+     - ${{ inputs.draft-label }}
