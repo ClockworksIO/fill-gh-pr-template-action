@@ -37,7 +37,7 @@ jobs:
             ${{ runner.os }}-dependencies-
       # Do stuff
       - name: pr template
-        uses: ClockworksIO/fill-gh-pr-template-action
+        uses: ClockworksIO/fill-gh-pr-template-action@v1-SNAPSHOT
         with:
           draft: true
           draft-label: 'entwurf'
