@@ -2,6 +2,9 @@
 name: 'Fill PR Template'
 description: 'Fill a PR template using the given values.'
 inputs:
+  pull-request:
+    description: The id of the PR
+    required: true
   draft:  # set if a PR is set as a draft as default
     description: 'PR is marked as a draft'
     required: false
@@ -16,6 +19,3 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-     - ${{ inputs.draft }}
-     - ${{ inputs.draft-label }}

@@ -1,0 +1,48 @@
+# on-pr.yml #
+name: On Pull Request
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [master]
+
+jobs:
+  validate_pull_request:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    name: Perform a series of checks on the committed code before it can be integrated into main.
+    steps:
+      # Checkout the code
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install Java
+      - name: Prepare java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '21'
+      # Use caching for fetched dependencies to speedup the pipeline
+      - name: Cache Build Dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            ~/.m2/repository
+          # List all files containing dependencies:
+          #key: cljdeps-${{ hashFiles('bb.edn') }}
+          key: ${{ runner.os }}-dependencies-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-dependencies-
+      # Do stuff
+      - name: pr template
+        uses: ClockworksIO/fill-gh-pr-template-action
+        with:
+          draft: true
+          draft-label: 'entwurf'
+          pull-request: ${{ github.event.number }}
+        env:
+          GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      

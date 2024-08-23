@@ -17,3 +17,9 @@ Build Docker image locally:
 ```sh
 docker build -t io.clockworks/fill-pr-template-gh-action .
 ```
+
+
+Start a Clojure Repl:
+```sh
+clj -M:nREPL -m nrepl.cmdline
+```

@@ -1,0 +1,11 @@
+FROM babashka/babashka:1.3.191-alpine
+
+RUN apk add git --no-cache
+
+COPY docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x entrypoint.sh
+
+COPY target/fill-gh-pr-template fill-gh-pr-template
+RUN chmod +x fill-gh-pr-template
+
+ENTRYPOINT ["/entrypoint.sh"]
