@@ -43,7 +43,7 @@ jobs:
           restore-keys: ${{ runner.os }}-${{ github.event.number }}-
       # Build an Uberjar
       - name: Build Uberjar
-        run: clj -T:build uber
+        run: cd action && clojure -T:build uber
       # Build native binary
       - name: Build Static Executable
         run: |
