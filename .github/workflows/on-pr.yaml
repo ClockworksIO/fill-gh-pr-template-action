@@ -30,7 +30,6 @@ jobs:
           cli: 1.11.2.1446             # Clojure CLI based on tools.deps
           bb: 1.3.189                  # Babashka
           clj-kondo: 2023.08.01        # Clj-kondo
-          cljstyle: 0.15.0             # cljstyle
       # Use caching for fetched dependencies to speedup the pipeline
       - name: Cache Build Dependencies
         uses: actions/cache@v4
