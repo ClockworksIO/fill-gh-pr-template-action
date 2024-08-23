@@ -20,6 +20,7 @@ jobs:
         with:
           java-version: '21'
           distribution: 'graalvm'
+          native-image-musl: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
       # Setup Clojure / Babashka environment
       - name: Install clojure tools
@@ -46,8 +47,6 @@ jobs:
         run: cd action && clojure -T:build uber
       # Build native binary
       - name: Build Static Executable
-        with:
-          native-image-musl: true
         run: |
           native-image \
           -jar action/target/fill-gh-pr-template.jar \
