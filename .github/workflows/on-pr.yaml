@@ -74,8 +74,8 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/ClockworksIO/fill-gh-pr-template-action:latest
-            ghcr.io/ClockworksIO/fill-gh-pr-template-action:0.0.1
+            ghcr.io/clockworksio/fill-gh-pr-template-action:latest
+            ghcr.io/clockworksio/fill-gh-pr-template-action:0.0.1
 
       # # Do stuff
       # - name: pr template
