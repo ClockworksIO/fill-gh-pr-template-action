@@ -46,6 +46,8 @@ jobs:
         run: cd action && clojure -T:build uber
       # Build native binary
       - name: Build Static Executable
+        with:
+          native-image-musl: true
         run: |
           native-image \
           -jar action/target/fill-gh-pr-template.jar \
@@ -53,7 +55,6 @@ jobs:
           --report-unsupported-elements-at-runtime \
           --initialize-at-build-time \
           --no-fallback \
-          --no-server \
           --static \
           --libc=musl \
           action/target/fill-gh-pr-template
