@@ -73,7 +73,7 @@ jobs:
         with:
           platforms: linux/amd64
           context: action
-          file: docker/Dockerfile
+          file: action/docker/Dockerfile
           push: true
           tags: |
             ghcr.io/clockworksio/fill-gh-pr-template-action:latest
