@@ -5,7 +5,7 @@ RUN apk add git --no-cache
 #COPY entrypoint.sh /entrypoint.sh
 #RUN chmod +x entrypoint.sh
 
-COPY ./action/foo.md /foo.md
+COPY foo.md /foo.md
 
 #COPY action/target/fill-gh-pr-template fill-gh-pr-template
 #RUN chmod +x fill-gh-pr-template
