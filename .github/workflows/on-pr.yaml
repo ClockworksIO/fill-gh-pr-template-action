@@ -68,17 +68,19 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
       # Build and Push the Docker Image
-      - name: Build and push Docker Image
-        uses: docker/build-push-action@v6
-        env:
-          DOCKER_BUILDKIT: 0
-        with:
-          platforms: linux/amd64
-          context: ./action/docker
-          push: true
-          tags: |
-            ghcr.io/clockworksio/fill-gh-pr-template-action:latest
-            ghcr.io/clockworksio/fill-gh-pr-template-action:0.0.1
+      - name: Build Docker Image
+        run: docker build ./action/docker --tag ghcr.io/clockworksio/fill-gh-pr-template-action:0.0.1
+      # - name: Build and push Docker Image
+      #   uses: docker/build-push-action@v6
+      #   env:
+      #     DOCKER_BUILDKIT: 0
+      #   with:
+      #     platforms: linux/amd64
+      #     context: ./action/docker
+      #     push: true
+      #     tags: |
+      #       ghcr.io/clockworksio/fill-gh-pr-template-action:latest
+      #       ghcr.io/clockworksio/fill-gh-pr-template-action:0.0.1
 
       # # Do stuff
       # - name: pr template
