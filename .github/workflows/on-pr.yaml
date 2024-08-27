@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      packages: write
     name: Perform a series of checks on the committed code before it can be integrated into main.
     steps:
       # Checkout the code
