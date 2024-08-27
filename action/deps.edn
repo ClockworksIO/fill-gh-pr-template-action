@@ -5,6 +5,7 @@
                                                  :git/tag "clci-0.25.2" 
                                                  :git/sha "9bfa874cf07ab7ecaa5d642e53794819721f71eb"}
          babashka/process                       {:mvn/version "0.5.22"}
+         instaparse/instaparse                  {:mvn/version "1.5.0"}
          }
  
  :aliases         {:format      {:deps          {mvxcvi/cljstyle                       {:mvn/version "0.15.0"}}}
