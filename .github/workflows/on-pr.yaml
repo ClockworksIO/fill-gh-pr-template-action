@@ -70,9 +70,11 @@ jobs:
       # Build and Push the Docker Image
       - name: Build and push Docker Image
         uses: docker/build-push-action@v6
+        env:
+          DOCKER_BUILDKIT: 0
         with:
           platforms: linux/amd64
-          context: action/docker
+          context: ./action/docker
           push: true
           tags: |
             ghcr.io/clockworksio/fill-gh-pr-template-action:latest
